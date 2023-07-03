@@ -17,8 +17,10 @@ namespace nui
     {
       mCurrentFile = "< ... >";
 
-      mFileDialog.SetTitle("Open mesh");
-      mFileDialog.SetFileFilters({ ".fbx", ".obj" });
+      //mFileDialog.SetTitle("Open mesh");
+      //mFileDialog.SetFileFilters({ ".fbx", ".obj" });
+      mFileDialog.SetTitle("Select the .dcm file to be converted");
+      mFileDialog.SetFileFilters({ ".dcm" });
     }
 
     void render(nui::SceneView* mScene);
@@ -36,7 +38,9 @@ namespace nui
 
     std::string mCurrentFile;
 
-
+    // Display mp4
+    bool showVideo = false;
+    double currentIoFrameNumber = 0;
   };
 }
 
