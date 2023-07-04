@@ -177,7 +177,7 @@ namespace nui
         //string command = "yes | /echocardiography-ui/packages/DICOMTestExe/DICOMTestExe " + mFileDialog.GetSelected().string() + " A2C";
         //system(command.c_str());
         std::string current_path = std::filesystem::current_path().string();
-        std::string command = "cd C:\\Users\\user\\Documents\\jgl_demos\\3DEchocardiography\\post && C:\\Users\\user\\Documents\\jgl_demos\\3DEchocardiography\\miniconda3\\condabin\\conda activate base && yes | python C:\\Users\\user\\Documents\\jgl_demos\\3DEchocardiography\\post\\DICOMTestExe.py " + mFileDialog.GetSelected().string() + " A2C && cd " + current_path;
+        std::string command = "cd ..\\3DEchocardiography\\post && ..\\miniconda3\\condabin\\conda activate base && yes | python DICOMTestExe.py " + mFileDialog.GetSelected().string() + " A2C && cd " + current_path;
         std::cout << "command: " << command << std::endl;
         std::system(command.c_str());
 
@@ -194,7 +194,7 @@ namespace nui
 
         // Open the input file
         AVFormatContext* formatContext = nullptr;
-        std::string inputFilename = "C:\\Users\\user\\Documents\\jgl_demos\\3DEchocardiography\\data\\dcm\\dicomresults\\A2C\\mp4s\\PWHOR190734217S_12Oct2021_CX03WQDU_3DQ.mp4";
+        std::string inputFilename = "..\\3DEchocardiography\\data\\dcm\\dicomresults\\A2C\\mp4s\\PWHOR190734217S_12Oct2021_CX03WQDU_3DQ.mp4";
         if (avformat_open_input(&formatContext, inputFilename.c_str(), nullptr, nullptr) != 0)
         {
             std::cerr << "Could not open input file.\n";
